@@ -5,7 +5,10 @@
 
 	#-- Direccion base de acceso a perifericos
 	.eqv BASE 0xFFFF0010
-	.eqv DIG_1 0x06
+	.eqv DIG_0 0x06
+	.eqv DIG_1 0x3F
+	.eqv DIG_2 0x5B
+	.eqv DIG_3 0x4F
 	#--- Offset para accdeder a los diferentes perifericos
 	
 	#-- Display izquierdo
@@ -27,22 +30,22 @@
 	li x13, 0xffffff81
 
 escribir0:
-	li t2, 0x06
+	li t2, DIG_0
 	sb t2, DISP_L(t0)
 	b bucle
 	
 escribir1:
-	li t2, 0x3F
+	li t2, DIG_1
 	sb t2, DISP_L(t0)
 	b bucle
 
 escribir2:
-	li t2, 0x5B
+	li t2, DIG_2
 	sb t2, DISP_L(t0)
 	b bucle
 
 escribir3:
-	li t2, 0x4F
+	li t2, DIG_3
 	sb t2, DISP_L(t0)
 	b bucle		
 
@@ -51,12 +54,14 @@ escribir3:
 	#-- primera fila
 bucle:		
 	#-- Seleccionar la fila 1
-	li t1, 01
+
+	li t1, 1
 	sb t1, KEY_ENA(t0)
+	
 	
 	#-- Leer la tecla
 	lb t2, KEY_RD(t0)
-	
+
 	#-- Escribir el código en el display izquierdo
 	beq t2, x10, escribir0
 	beq t2, x11, escribir1
@@ -65,3 +70,6 @@ bucle:
 	
 	
 	b bucle
+	
+	li a7, 10
+	ecall

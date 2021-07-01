@@ -60,6 +60,7 @@ tabla:  .word DIG_0  #-- E1
 	li x19, 7
 	li x20, 8
 	li x21, 9
+	li x22, 10
 
 
 	
@@ -104,7 +105,15 @@ num8:	lw x11, E9(x4)
 num9:	lw x11, E10(x4)
 	sb x11, 0(x6)
 	b bucle
+
+restart:
+	lw x10, E1(x4)
+	sb x10, 0(x5)
+	lw x11, E1(x4)
+	sb x11, 0(x6)
+	b Fin
 	
+
 bucle:
 	addi t2, t2, 1
 	
@@ -160,6 +169,9 @@ bucle:
 	beq  t2, x20, num8
 	
 	beq  t2, x21, num9	
+	
+	# Restart
+	beq  t2, x22, restart
 
 	b bucle
 	# Fin

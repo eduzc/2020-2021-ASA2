@@ -28,7 +28,6 @@
 	
 	#-- Seleccion de la fila
 	.eqv KEY_ENA 02  #-- BASE + 2
-	.eqv KEY_ENA2 03
 	
 	#-- Lectura del codigo de tecla
 	.eqv KEY_RD  04  #-- BASE + 4
@@ -37,6 +36,7 @@
 	
 	#-- Puntero base de acceso a perifericos
 	li t0, BASE
+
 	li x10, 0x00000011
 	li x11, 0x00000021
 	li x12, 0x00000041
@@ -54,12 +54,11 @@
 	li x24, 0x00000048
 	li x25, 0xffffff88
 	
+	# Reinicio el valor de t1 
+	# Para que vuelva a analizar desde la fila 1
+reset: 
+	li t1, 0
 	b bucle
-
-#0x24,0x44,0x84,0x18,0x28,0x48,0x88.
-
-	#-- Bucle infinito que está constntemente leyendo la 
-	#-- primera fila
 	
 escribir0:
 
@@ -70,92 +69,92 @@ escribir0:
 escribir1:
 	li t2, DIG_1
 	sb t2, DISP_L(t0)
-	b final	
+	b bucle	
 
 escribir2:
 	li t2, DIG_2
 	sb t2, DISP_L(t0)
-	b final	
+	b bucle	
 	
 escribir3:
 	li t2, DIG_3
 	sb t2, DISP_L(t0)
-	b final	
+	b bucle	
+		
+	b bucle
 	
 escribir4:
 	li t2, DIG_4
 	sb t2, DISP_L(t0)
-	b final	
+	b bucle	
 	
 escribir5:
 	li t2, DIG_5
 	sb t2, DISP_L(t0)
-	b final	
+	b bucle	
 	
 escribir6:
 	li t2, DIG_6
 	sb t2, DISP_L(t0)
-	b final	
+	b bucle	
 	
 escribir7:
 	li t2, DIG_7
 	sb t2, DISP_L(t0)
-	b final	
+	b bucle	
 	
 escribir8:
 	li t2, DIG_8
 	sb t2, DISP_L(t0)
-	b final	
+	b bucle	
 
 escribir9:
 	li t2, DIG_9
 	sb t2, DISP_L(t0)
-	b final	
+	b bucle	
 	
 escribira:
 	li t2, DIG_A
 	sb t2, DISP_L(t0)
-	b final	
+	b bucle	
 	
 escribirb:
 	li t2, DIG_B
 	sb t2, DISP_L(t0)
-	b final		
+	b bucle		
 	
 escribirc:
 	li t2, DIG_C
 	sb t2, DISP_L(t0)
-	b final	
+	b bucle	
 	
 escribird:
 	li t2, DIG_D
 	sb t2, DISP_L(t0)
-	b final	
+	b bucle
+		
 escribire:
 	li t2, DIG_E
 	sb t2, DISP_L(t0)
-	b final	
+	b bucle	
 escribirf:
 	li t2, DIG_F
 	sb t2, DISP_L(t0)
-	b final	
+	b bucle	
+	
+	
+	#-- Bucle infinito que está constantemente leyendo las 4 filas 
 	
 bucle:		
 	#-- Escanear todas las filas
-	addi t3, t3, 1
-	mv t1, t3
-	addi t1, t1, 1
-
 	
+	addi t1, t1, 1
 	
 	sb t1, KEY_ENA(t0)
 	#-- Leer la tecla
 	lb t2, KEY_RD(t0)
 	
-	#-- Escribir el código en el display izquierdo
-	sb t2, DISP_L(t0)
-	li t4, 5
-	blt t3, t4, bucle
+	
 	
 	beq t2, x10, escribir0
 	beq t2, x11, escribir1
@@ -173,6 +172,11 @@ bucle:
 	beq t2, x23, escribird
 	beq t2, x24, escribire
 	beq t2, x25, escribirf
+	
+	#-- Escribir el código en el display izquierdo
+	sb t2, DISP_L(t0)
+	li t4, 8
+	beq t1, t4, reset
 	
 	b bucle
 

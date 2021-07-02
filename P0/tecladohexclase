@@ -1,0 +1,130 @@
+#-- Solucion al ejercicio 10
+#-- Leer las teclas de la primera fila del teclado hexadecimal
+#-- y escribir su código en el puerto de salida del display
+#-- izquierdo
+	.include "servicios.asm"
+	#-- Direccion base de acceso a perifericos
+	.eqv BASE 0xFFFF0010
+	.eqv DIG_0 0x3F
+	.eqv DIG_1 0x06
+	.eqv DIG_2 0x5B
+	.eqv DIG_3 0x4F
+	.eqv DIG_4 0x66
+	.eqv DIG_5 0x6D
+	.eqv DIG_6 0x7D
+	.eqv DIG_7 0x07
+	.eqv DIG_8 0x7F
+	.eqv DIG_9 0x6F
+	.eqv DIG_0 0x3F
+	#--- Offset para accdeder a los diferentes perifericos
+	
+	#-- Display izquierdo
+	.eqv DISP_L 01  #-- BASE + 1
+	
+	#-- Seleccion de la fila
+	.eqv KEY_ENA 02  #-- BASE + 2
+	.eqv KEY_ENA2 03
+	
+	#-- Lectura del codigo de tecla
+	.eqv KEY_RD  04  #-- BASE + 4
+	
+	.text
+	
+	#-- Puntero base de acceso a perifericos
+	li t0, BASE
+	li x10, 0x00000011
+	li x11, 0x00000021
+	li x12, 0x00000041
+	li x13, 0xffffff81
+	li x14, 0x00000012
+	li x15, 0x00000022
+	li x16, 0x00000042
+	li x17, 0xffffff82
+	li x18, 0x00000014
+
+
+
+	#-- Bucle infinito que está constntemente leyendo la 
+	#-- primera fila
+	
+escribir0:
+
+	li t2, DIG_0
+	sb t2, DISP_L(t0)
+	b bucle
+	
+escribir1:
+	li t2, DIG_1
+	sb t2, DISP_L(t0)
+	b final	
+
+escribir2:
+	li t2, DIG_2
+	sb t2, DISP_L(t0)
+	b final	
+	
+escribir3:
+	li t2, DIG_3
+	sb t2, DISP_L(t0)
+	b final	
+	
+escribir4:
+	li t2, DIG_4
+	sb t2, DISP_L(t0)
+	b final	
+	
+escribir5:
+	li t2, DIG_5
+	sb t2, DISP_L(t0)
+	b final	
+	
+escribir6:
+	li t2, DIG_6
+	sb t2, DISP_L(t0)
+	b final	
+	
+escribir7:
+	li t2, DIG_7
+	sb t2, DISP_L(t0)
+	b final	
+	
+escribir8:
+	li t2, DIG_8
+	sb t2, DISP_L(t0)
+	b final	
+	
+	
+	
+bucle:		
+	#-- Escanear todas las filas
+	
+	addi t3, t3, 1
+	
+	mv t1, t3
+
+	
+	
+	sb t1, KEY_ENA(t0)
+	#-- Leer la tecla
+	lb t2, KEY_RD(t0)
+	
+	#-- Escribir el código en el display izquierdo
+	sb t2, DISP_L(t0)
+	li t4, 5
+	blt t3, t4, bucle
+	
+	beq t2, x10, escribir0
+	beq t2, x11, escribir1
+	beq t2, x12, escribir2
+	beq t2, x13, escribir3
+	beq t2, x14, escribir4
+	beq t2, x15, escribir5
+	beq t2, x16, escribir6
+	beq t2, x17, escribir7
+	beq t2, x18, escribir8
+
+	
+	b bucle
+
+final:	li a7, EXIT
+	ecall

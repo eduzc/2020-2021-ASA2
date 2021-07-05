@@ -4,7 +4,7 @@
 	.include "servicios.asm"
 	.include "constantes.asm"
 	
-	
+	# Escribimos los numeros del 9 al 0
 bucle:
 
 	sw x15, 0(x6)

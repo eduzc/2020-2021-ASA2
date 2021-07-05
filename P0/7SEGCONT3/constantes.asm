@@ -29,26 +29,7 @@
 	.eqv E8 0x1C
 	.eqv E9 0x20
 	.eqv E10 0x24	
-	#-- Seleccion de la fila
-	.eqv KEY_ENA 02  #-- BASE + 2
-	
-	#-- Lectura del codigo de tecla
-	.eqv KEY_RD  04  #-- BASE + 4
-
-	# Constantes
-
-	.eqv num_0 0x00000011
-	.eqv num_1 0x00000021
-	.eqv num_2 0x00000041
-	.eqv num_3 0xffffff81
-	.eqv num_4 0x00000012
-	.eqv num_5 0x00000022
-	.eqv num_6 0x00000042
-	.eqv num_7 0xffffff82
-	.eqv num_8 0x00000014
-	.eqv num_9 0x00000024
-	
-	
+		
 	
 	.data
 	

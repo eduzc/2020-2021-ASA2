@@ -2,6 +2,9 @@
 	.include "constantes.asm"
 	.globl Perifericos
 	.text
+	
+	# Accedemos a tabla
+	# Accedemos a los displays
 Perifericos:	
 	la x23, tabla
 	li x6, BASE_L

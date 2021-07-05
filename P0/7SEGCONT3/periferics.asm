@@ -3,7 +3,7 @@
 	.globl Perifericos
 	.text
 Perifericos:	
-	la x4, tabla
+	la x23, tabla
 	li x6, BASE_L
 	li x5, BASE_R
 	li t2, 9

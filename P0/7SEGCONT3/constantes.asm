@@ -48,6 +48,8 @@
 	.eqv num_8 0x00000014
 	.eqv num_9 0x00000024
 	
+	
+	
 	.data
 	
 tabla:  .word DIG_0  #-- E1

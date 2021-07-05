@@ -5,7 +5,7 @@
 	.include "servicios.asm"
 	.data
 	
-palabras: .word LED_D, DIG_1, DIG_3, DIG_5, DIG_7, DIG_9, DIG,0
+palabras: .word LED_D, DIG_1, DIG_3, DIG_5, DIG_7, DIG_9,
 	
 	.text
 	la x4, palabras #acceso a puntero
@@ -15,7 +15,7 @@ palabras: .word LED_D, DIG_1, DIG_3, DIG_5, DIG_7, DIG_9, DIG,0
 	li x11, DIG_5
 	li x13, DIG_7
 	li x15, DIG_9
-	li x16, DIG_0
+
 	
 	# Puntero de acceso al display
 	jal bucle

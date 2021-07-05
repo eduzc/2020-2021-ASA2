@@ -6,7 +6,7 @@
 	
 	
 bucle:
-	sw x16, 0(x6)
+
 	sw x15, 0(x6)
 	sw x14, 0(x6)
 	sw x13, 0(x6)
@@ -16,6 +16,7 @@ bucle:
 	sw x9, 0(x6)
 	sw x8, 0(x6)
 	sw x7, 0(x6)
+	sw x16, 0(x6)
 
 	b bucle
 	ret

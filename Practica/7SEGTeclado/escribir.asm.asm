@@ -1,6 +1,7 @@
 	.include "servicios.asm"
 	.include "constantes.asm"
-
+	
+	.globl escribir0
 	.globl escribir1
 	.globl escribir2
 	.globl escribir3
@@ -10,9 +11,20 @@
 	.globl escribir7
 	.globl escribir8
 	.globl escribir9
+	.globl escribira
+	.globl escribirb
+	.globl escribirc
+	.globl escribird
+	.globl escribire
+	.globl escribirf
 
 	.text
 	
+escribir0:	
+	li x16, DIG_0
+	sw x16, 0(t0)
+	jal Final
+	ret
 escribir1:	
 	li x16, DIG_1
 	sw x16, 0(t0)
@@ -55,6 +67,36 @@ escribir8:
 	ret
 escribir9:
 	li x16, DIG_9	
+	sw x16, 0(t0)
+	jal Final
+	ret
+escribira:
+	li x16, DIG_A	
+	sw x16, 0(t0)
+	jal Final
+	ret
+escribirb:
+	li x16, DIG_B	
+	sw x16, 0(t0)
+	jal Final
+	ret
+escribirc:
+	li x16, DIG_C	
+	sw x16, 0(t0)
+	jal Final
+	ret
+escribird:
+	li x16, DIG_D	
+	sw x16, 0(t0)
+	jal Final
+	ret
+escribire:
+	li x16, DIG_E	
+	sw x16, 0(t0)
+	jal Final
+	ret
+escribirf:
+	li x16, DIG_F	
 	sw x16, 0(t0)
 	jal Final
 	ret

@@ -19,7 +19,6 @@
 	.eqv DIG_E 0x79
 	.eqv DIG_F 0x71
 	
-	.eqv DISP_L 01  #-- BASE + 1
 	
 	
 

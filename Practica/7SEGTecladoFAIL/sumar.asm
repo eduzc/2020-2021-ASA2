@@ -1,13 +1,9 @@
-#-- Ejercicio 5
-#-- Pedir un numero entero al usuario
-#-- y enviarlo tal cual al display de 7 segmentos derecho
-#-- Test: el 255 (0xFF) debe encender todos los segmentos
 
-	#-- Direccion del display derecho
+
+	# Incluyo constantes y servicios 
 	.include "servicios.asm"
 	.include "constantes.asm"
 	
-
 
 	.globl Final
 	.text

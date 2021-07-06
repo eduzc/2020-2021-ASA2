@@ -22,6 +22,8 @@
 	.globl escribir9a
 
 	.text
+	
+	# Escribimos en el display izquierdo
 escribir1a:	
 	li x17, DIG_1
 	sb x17, 0(t2)
@@ -67,6 +69,8 @@ escribir9a:
 	sb x17, 0(t2)
 	jal Final
 	ret	
+	
+	# Escribimos en el display derecho.
 escribir1:	
 	li x16, DIG_1
 	sb x16, 0(t0)

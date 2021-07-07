@@ -1,6 +1,4 @@
 # Constantes
-
-		
 	.eqv LED_D 0xFFFF0010
 	.eqv DIG_0 0x3F
 	.eqv DIG_1 0x06

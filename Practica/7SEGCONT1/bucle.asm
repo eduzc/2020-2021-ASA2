@@ -1,9 +1,9 @@
-# bucle
+	# bucle
 
 	.globl bucle
 	.include "servicios.asm"
 	.include "constantes.asm"
-	
+	# Escribimos en x6 cada valor
 	
 bucle:
 	sw x16, 0(x6)

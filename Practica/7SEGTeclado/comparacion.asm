@@ -1,4 +1,5 @@
-
+	.include "constantes.asm"
+	.include "servicios.asm"
 	.globl imprimir0
 	.globl imprimir1
 	.globl imprimir2
@@ -16,12 +17,11 @@
 	.globl imprimire
 	.globl imprimirf
 	.globl pedir
-	.include "constantes.asm"
-	.include "servicios.asm"
+	
 	.text
 	
 	
-	
+	# Llamamos a la funcion escribir
 imprimir0:	
 	jal escribir0
 	ret
@@ -74,7 +74,7 @@ pedir:
 	#-- Pedir Numero al usuario
 	li a7, READ_INT
 	ecall
-	
+	# almaceno en x16 el numero pedido
 	mv x16, a0
 	addi x23, x0, 0
 	addi x6, x0, 1

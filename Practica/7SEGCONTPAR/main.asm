@@ -1,5 +1,4 @@
-# Ej 6
-# AMPLIAR VALORES PARA HEXADECIMAL
+# Contador Par
 	
 	.include "constantes.asm"
 	.include "servicios.asm"

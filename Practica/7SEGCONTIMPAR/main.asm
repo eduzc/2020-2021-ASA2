@@ -1,12 +1,11 @@
-# Ej 6
-# AMPLIAR VALORES PARA HEXADECIMAL
+
 	
 	.include "constantes.asm"
 	.include "servicios.asm"
 	.data
 	
 palabras: .word LED_D, DIG_1, DIG_3, DIG_5, DIG_7, DIG_9,
-	
+	# Almacenamos los numeros en registros
 	.text
 	la x5, palabras # acceso a puntero
 	li x6, LED_D    # acceso al led derecho

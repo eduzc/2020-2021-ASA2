@@ -5,7 +5,7 @@
 	.data
 	
 palabras: .word LED_D, DIG_0, DIG_2, DIG_4, DIG_6, DIG_8
-	
+	# Almacenamos los numeros en registros
 	.text
 	la x5, palabras # acceso a puntero
 	li x6, LED_D	# acceso al display

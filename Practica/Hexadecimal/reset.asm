@@ -3,7 +3,7 @@
 	.globl reset3
 	.globl reset4
 
-
+	# reseteamos
 reset1: 
 	li t1, 0
 	b bucle

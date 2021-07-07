@@ -2,6 +2,8 @@
 	.include "servicios.asm"
 	.include "constantes.asm"
 
+	# Almacenamos en t0 la direccion del display
+	# y de los numeros
 perifericos:
 	li t0, BASE
 

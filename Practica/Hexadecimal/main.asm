@@ -1,13 +1,9 @@
-#-- Solucion al ejercicio 10
-#-- Leer las teclas de la primera fila del teclado hexadecimal
-#-- y escribir su código en el puerto de salida del display
-#-- izquierdo
+# Lectura de teclado hexadecimal
+
 	.include "servicios.asm"
 	.include "constantes.asm"
 	.text
-	
-	#-- Puntero base de acceso a perifericos
-	
+		
 	jal perifericos
 	
 	
@@ -54,8 +50,6 @@
 	jal escribire
 	
 	jal escribirf
-	
-	#-- Bucle infinito que está constantemente leyendo las 4 filas 
-	
+		
 final:	li a7, EXIT
 	ecall

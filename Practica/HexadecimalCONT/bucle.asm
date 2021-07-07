@@ -4,7 +4,7 @@
 	.include "servicios.asm"
 	.include "constantes.asm"
 	
-	
+	# Imprimimos los digitos en el Led
 bucle:
 	sw x16, 0(x6)
 	sw x7, 0(x6)

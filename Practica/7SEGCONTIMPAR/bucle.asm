@@ -3,7 +3,8 @@
 	.globl bucle
 	.include "servicios.asm"
 	.include "constantes.asm"
-	
+		
+	# Escribimos los números impares	
 bucle:
 
 	sw x7, 0(x6)  # 1

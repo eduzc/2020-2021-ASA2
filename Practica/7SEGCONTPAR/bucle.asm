@@ -4,7 +4,7 @@
 	.include "servicios.asm"
 	.include "constantes.asm"
 	
-	
+	# Escribimos en el Led
 bucle:
 	sw x16, 0(x6)
 

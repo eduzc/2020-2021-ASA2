@@ -22,7 +22,7 @@ palabras: .word LED_D, DIG_0, DIG_1, DIG_2, DIG_3, DIG_4, DIG_5, DIG_6, DIG_7, D
 	li x15, DIG_9	# 9
 	li x16, DIG_0	# 0
 	
-	# Puntero de acceso al display
+	# Llamada a bucle 
 	jal bucle
 	
 	li a7, EXIT

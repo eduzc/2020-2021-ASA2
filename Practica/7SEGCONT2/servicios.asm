@@ -1,6 +1,5 @@
 #	Servicios
 
-
 	.eqv PRINT_INT 		1
 	.eqv READ_INT 		5	
 	.eqv PRINT_STRING	4

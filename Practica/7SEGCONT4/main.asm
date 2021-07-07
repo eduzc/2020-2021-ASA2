@@ -1,4 +1,6 @@
-# Impresion en dos leds de digitos del 0 al 9
+	# Impresion en dos leds de digitos del 0 al 9
+	
+	
 	.include "servicios.asm"
 	.include "constantes.asm"
 	# Definicion de constantes

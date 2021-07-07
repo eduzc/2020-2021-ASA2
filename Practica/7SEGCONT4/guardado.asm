@@ -3,7 +3,7 @@
 	.include "constantes.asm"
 	.text	
 guardado:
-
+	# contador t2
 	addi t2, t2, 1
 	
 	# Escribimos los digitos en el LED DERECHO --> x5

@@ -3,12 +3,12 @@
 	.globl Perifericos
 	.text
 Perifericos:		
-	
+	# Accedemos a tabla
 	la x23, tabla
-	li x6, BASE_L
-	li x5, BASE_R
+	li x6, BASE_L # Display izquierdo
+	li x5, BASE_R # Display derecho
 	li t2, 0
-
+	# Almacenamos los valores
 	li x12, 0
 	li x13, 1
 	li x14, 2

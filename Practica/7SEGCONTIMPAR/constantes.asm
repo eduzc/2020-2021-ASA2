@@ -11,13 +11,9 @@
 	
 	.eqv DISP_L 01  #-- BASE + 1
 	
-	#-- Seleccion de la fila
-	.eqv KEY_ENA 02  #-- BASE + 2
 	
-	#-- Lectura del codigo de tecla
-	.eqv KEY_RD  04  #-- BASE + 4
 
-	# Constantes
+
 	
 
 	

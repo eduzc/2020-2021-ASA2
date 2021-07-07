@@ -4,7 +4,6 @@
 	.include "servicios.asm"
 	.include "constantes.asm"
 	
-	
 bucle:
 
 	sw x7, 0(x6)  # 1

@@ -8,8 +8,8 @@
 palabras: .word LED_D, DIG_1, DIG_3, DIG_5, DIG_7, DIG_9,
 	
 	.text
-	la x5, palabras #acceso a puntero
-	li x6, LED_D
+	la x5, palabras # acceso a puntero
+	li x6, LED_D    # acceso al led derecho
 	li x7, DIG_1
 	li x9, DIG_3
 	li x11, DIG_5

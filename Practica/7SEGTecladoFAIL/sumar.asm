@@ -93,6 +93,8 @@ pedir:
 	#-- t0 = puntero para acceder al display
 	li t0, LED_D
 	li t2, LED_L
+	
+	# Display izquierdo
 	beq x17, x6, imprimir1a
 	beq x17, x8, imprimir2a
 	beq x17, x9, imprimir3a
@@ -103,6 +105,7 @@ pedir:
 	beq x17, x14, imprimir8a
 	beq x17, x15, imprimir9a
 	
+	# Display derecho
 	beq x16, x6, imprimir1
 	beq x16, x8, imprimir2
 	beq x16, x9, imprimir3

@@ -1,6 +1,5 @@
-
+	# Funciones
 	.globl comparacion
-	
 	
 	
 	.include "servicios.asm"
@@ -23,15 +22,8 @@
 	.globl escribire
 	.globl escribirf
 	
-
 	.text
-
-	
-
-	
-	
-
-	
+	# Escribimos en display
 escribir0:
 
 	li t2, DIG_0
@@ -127,6 +119,8 @@ escribirf:
 	sb t2, DISP_L(t0)
 	jal reset4	
 	ret
+	
+	# Comparamos 
 comparacion:
 	beq t2, x10, escribir0
 	beq t2, x11, escribir1

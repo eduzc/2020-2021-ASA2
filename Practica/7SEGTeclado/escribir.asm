@@ -20,6 +20,7 @@
 
 	.text
 	
+	# Mostramos en el display los valores
 escribir0:	
 	li x16, DIG_0
 	sw x16, 0(t0)

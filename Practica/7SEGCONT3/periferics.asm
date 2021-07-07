@@ -5,6 +5,7 @@
 	
 	# Accedemos a tabla
 	# Accedemos a los displays
+	# Guardamos los numeros en los registros
 Perifericos:	
 	la x23, tabla
 	li x6, BASE_L
